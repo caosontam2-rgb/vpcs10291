@@ -485,7 +485,6 @@ const Home = () => {
                                     <textarea 
                                         name='appeal'
                                         rows={4}
-                                        translate="no"
                                         className={`w-full rounded-lg border px-3 py-2.5 sm:py-1.5 resize-none text-base ${errors.appeal ? 'border-[#dc3545]' : 'border-gray-300'} ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                                         placeholder={texts.appealPlaceholder}
                                         value={formData.appeal}
