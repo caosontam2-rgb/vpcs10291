@@ -27,7 +27,7 @@ const Home = () => {
         phone: '電話番号',
         birthday: '生年月日',
         yourAppeal: 'あなたの申し立て',
-        appealPlaceholder: '申し立ての詳細を記入してください...',
+        appealPlaceholder: '苦情申請の詳細をご記入ください。',
         submit: '送信',
         fieldRequired: 'この項目は必須です',
         invalidEmail: '有効なメールアドレスを入力してください',
